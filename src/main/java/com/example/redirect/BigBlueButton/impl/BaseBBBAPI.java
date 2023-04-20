@@ -28,6 +28,7 @@ import javax.xml.parsers.ParserConfigurationException;
 import com.example.redirect.BigBlueButton.api.BBBException;
 import com.example.redirect.BigBlueButton.api.BBBMeeting;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.stereotype.Service;
@@ -44,7 +45,7 @@ import org.xml.sax.SAXException;
  * Last modified by Yunkai Wang
  */
 @Service
-
+@Data
 public class BaseBBBAPI implements BBBAPI {
     /**
      * BBB server url, including bigbluebutton webapp path. Will default to
@@ -99,7 +100,7 @@ public class BaseBBBAPI implements BBBAPI {
     }
 
     public String getUrl() {
-        return "https://sam1.gyanada.in/bigbluebutton/api";
+        return bbbUrl;
     }
 
     /*
